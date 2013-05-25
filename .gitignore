@@ -21,7 +21,6 @@ local.properties
 .classpath
 .project
 
-
 *.py[cod]
 
 # C extensions
