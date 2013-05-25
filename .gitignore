@@ -1,5 +1,8 @@
 *~
 .DS_STORE
+*.sublime-project
+*.sublime-workspace
+sftp-config.json
 
 # built application files
 *.apk
