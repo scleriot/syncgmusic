@@ -54,8 +54,8 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class MainActivity extends SherlockActivity {
 	//String api_url = "http://192.168.0.3:5000";
-	private String api_url = "http://qqdroid.mobi:5000";
-	
+	private String api_url = "http://gmusic.cleriotsimon.com";
+		
 	private String token=null;
 	private JSONObject currentTrack=null;
 	private List<JSONObject> songs = new ArrayList<JSONObject>();
@@ -71,7 +71,7 @@ public class MainActivity extends SherlockActivity {
 		setContentView(R.layout.activity_main);
 		
 		l = (ListView) findViewById(R.id.listview);
-		l.setOnItemClickListener(new OnItemClickListener() {
+		/*l.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -94,7 +94,7 @@ public class MainActivity extends SherlockActivity {
 					e.printStackTrace();
 				}
 			}
-		});
+		});*/
 		
 		
 		adapter = new ArrayAdapter<String>(
@@ -107,9 +107,6 @@ public class MainActivity extends SherlockActivity {
 				li.setOrientation(LinearLayout.VERTICAL);
 				
 				TextView txt = new TextView(this.getContext());
-
-				//txt.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float
-					//	.parseFloat(pref.getString("policesize", "18")));
 
 				ProgressBar b = new ProgressBar(MainActivity.this, null, android.R.attr.progressBarStyleHorizontal);
 				b.setProgress(0);
@@ -126,16 +123,6 @@ public class MainActivity extends SherlockActivity {
 					e.printStackTrace();
 				}
 
-				/*if (pref.getString("design", "blackonwhite").equals(
-						"blackonwhite")) {
-					txt.setTextColor(Color.BLACK);
-					txt.setBackgroundColor(Color.WHITE);
-				} else if (pref.getString("design", "blackonwhite").equals(
-						"whiteonblack")) {
-					txt.setTextColor(Color.WHITE);
-					txt.setBackgroundColor(Color.BLACK);
-				}
-				*/
 				txt.setPadding(20, 20, 20, 20);
 				Log.d("MUSIC", txt.getText().toString());
 				li.addView(txt);
@@ -211,7 +198,7 @@ public class MainActivity extends SherlockActivity {
 			try {
 				array = new JSONArray(result);
 								
-				for(int i=0;i<10;i++){
+				for(int i=0;i<array.length();i++){
 					JSONObject obj;
 					try {
 						obj = (JSONObject) array.get(i);
@@ -384,6 +371,8 @@ public class MainActivity extends SherlockActivity {
 	            String authToken = GoogleAuthUtil.getToken(mActivity, params[0],
 	                    "sj");
 
+	            Log.d("MUSIC", authToken);
+	            
 	            if (!TextUtils.isEmpty(authToken)) {
 	            	return authToken;
 	               //TODO: if (!success)
