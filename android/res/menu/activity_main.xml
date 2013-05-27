@@ -3,6 +3,17 @@
     <item
         android:id="@+id/menu_dl"
         android:showAsAction="ifRoom|withText"
-        android:title="Download"/>
+        android:title="@string/menu_download"
+        android:enabled="false" />
+    
+    <item
+        android:id="@+id/menu_about"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_about"/>
+    
+    <item
+        android:id="@+id/menu_account"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_account"/>
 
 </menu>

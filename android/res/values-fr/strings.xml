@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SyncGMusic</string>
+    <string name="menu_download">Télécharger</string>
+    <string name="menu_about">À propos</string>
+    <string name="menu_account">Changer de compte</string>
+
+    <string name="loading">Chargement, merci de patienter...</string>
+</resources>
