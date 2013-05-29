@@ -12,6 +12,35 @@ def list():
 	songs = mm.get_all_songs(incremental=False)
 	return json.dumps(songs)
 
+
+
+@app.route('/playlists', methods=['GET', 'POST'])
+def list():
+	mm = Webclient()
+	token = request.form['token']
+	mm.setToken(token)
+	playlists = mm.get_all_playlist_ids()
+	output = "["
+
+	songs = mm.get_all_songs(incremental=False)
+	output += "{'title': 'Full library', 'songs' : "
+	output += json.dumps(songs)
+	output += "},"
+
+	for (key,values) in playlists['user'].items():
+		for playlistid in values:
+			output += "{ 'title':'"+key+"', 'songs' :"
+			songs=mm.get_playlist_songs(playlistid)
+			output += json.dumps(songs)
+			output += "},"
+
+	output += "]"
+
+	return output
+
+
+
+
 @app.route('/download_song', methods=['GET', 'POST'])
 def download_song():
 	print "Request : Download url"

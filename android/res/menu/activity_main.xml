@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/menu_dl"
+        android:id="@+id/menu_cancel"
         android:showAsAction="ifRoom|withText"
-        android:title="@string/menu_download"
-        android:enabled="false" />
+        android:title="@string/menu_cancel"
+        android:visible="false" />
     
     <item
         android:id="@+id/menu_about"

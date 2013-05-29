@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">SyncGMusic</string>
-    <string name="menu_download">Download</string>
+    <string name="menu_cancel">Cancel</string>
     <string name="menu_about">About</string>
     <string name="menu_account">Change account</string>
 
